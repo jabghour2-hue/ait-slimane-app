@@ -24,8 +24,14 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Create Android Structure
-        run: flutter create --platforms=android .
+      - name: Create Android Structure & Fix MinSdkVersion
+        run: |
+          flutter create --platforms=android --org=ma.appy.aitslimane .
+          sed -i 's/minSdkVersion = flutter.minSdkVersion/minSdkVersion = 21/g' android/app/build.gradle
+          sed -i 's/minSdkVersion flutter.minSdkVersion/minSdkVersion 21/g' android/app/build.gradle
+
+      - name: Get Dependencies
+        run: flutter pub get
 
       - name: Build APK
         run: flutter build apk --release
