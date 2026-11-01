@@ -1,7 +1,7 @@
 name: ait_slimane_app
 description: "تطبيق جمعية أيت سليمان للتنمية"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
+  http: ^1.2.0
+  mobile_scanner: ^5.2.3
 
 dev_dependencies:
   flutter_test:
